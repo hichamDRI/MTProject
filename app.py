@@ -20,7 +20,7 @@ st.title('Frensh to Arabic Translator')
 textFR = st.text_area("Enter Text :", value='',key="FrenshText")
 
 if st.button('Translate', key="FrenshBtn"):
-    if text == '':
+    if textFR == '':
         st.write('Please enter Frensh text for translation') 
     else: 
         inputs = tokenizer_fr_ar.encode(textFR, return_tensors="pt")
@@ -34,7 +34,7 @@ st.title('Arabic to Frensh Translator')
 textAR = st.text_area("Enter Text:", value='',key="ArabicText")
 
 if st.button('Translate', key="ArabicBtn"):
-    if text == '':
+    if textAR == '':
         st.write('Please enter Arabic text for translation') 
     else: 
         inputs = tokenizer_ar_fr.encode(textAR, return_tensors="pt")
