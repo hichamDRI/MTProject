@@ -1,6 +1,11 @@
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 import streamlit as st
+from subprocess import Popen
 
+def load_jupyter_server_extension(nbapp):
+    """serve the streamlit app"""
+    Popen(["streamlit", "hello", "--browser.serverAddress=0.0.0.0", "--server.enableCORS=False"])
+    
 @st.cache(allow_output_mutation=True, suppress_st_warning=True)
 def download_model(model_name):
     model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
