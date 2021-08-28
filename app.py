@@ -17,7 +17,7 @@ model_ar_fr, tokenizer_ar_fr = download_model(model_name_ar_fr)
 st.markdown("<h1 style='text-align: center; color: red;'>Machine Translation using Transformers</h1>", unsafe_allow_html=True)
 st.title('Frensh to Arabic Translator')
 
-text = st.text_area("Enter Text :", value='', height=None, max_chars=None, key="FrenshText")
+text = st.text_area("Enter Text :", value='',  max_chars=None, key="FrenshText")
 
 if st.button('Translate', key="FrenshBtn"):
     if text == '':
@@ -31,7 +31,7 @@ else: pass
 
 
 st.title('Arabic to Frensh Translator')
-text = st.text_area("Enter Text:", value='', height=None, max_chars=None, key="ArabicText")
+text = st.text_area("Enter Text:", value='',  max_chars=None, key="ArabicText")
 
 if st.button('Translate', key="ArabicBtn"):
     if text == '':
