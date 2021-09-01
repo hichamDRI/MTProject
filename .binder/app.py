@@ -27,7 +27,7 @@ if st.button('Translate', key="FrenshBtn"):
         inputs = tokenizer_fr_ar.encode(text, return_tensors="pt")
         outputs = model_fr_ar.generate(inputs, max_length=128, num_beams=4, early_stopping=True)
         out=tokenizer_fr_ar.decode(outputs[0])
-        st.text_area('Translation Result :', str(out).strip('<pad>'))
+        st.text_area('Translation Result :', str(out).strip('<pad>'), key="ArabicResult")
 else: pass
 
 
@@ -41,6 +41,6 @@ if st.button('Translate', key="ArabicBtn"):
         inputs = tokenizer_ar_fr.encode(text, return_tensors="pt")
         outputs = model_ar_fr.generate(inputs, max_length=128, num_beams=4, early_stopping=True)
         out=tokenizer_ar_fr.decode(outputs[0])
-        st.text_area('Translation Result :', str(out).strip('<pad>'))
+        st.text_area('Translation Result :', str(out).strip('<pad>'), key="FrenshResult")
 else: pass
 st.markdown("<h3 style='text-align: center; color: green;'>Created By: CHATER hicham & ABOURACHID Tarik</h3>", unsafe_allow_html=True)
