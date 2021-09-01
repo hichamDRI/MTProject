@@ -18,7 +18,7 @@ model_ar_fr, tokenizer_ar_fr = download_model(model_name_ar_fr)
 st.markdown("<h1 style='text-align: center; color: red;'>Machine Translation using Transformers<br><br></h1>", unsafe_allow_html=True)
 
 st.title('Choose your translation option :')
-option = st.selectbox('',('From Frensh To Arabic', 'From Arabic To Frensh'))
+option = st.selectbox('',('From Frensh To Arabicccccccccc', 'From Arabic To Frensh'))
 
 
 text = st.text_area("Enter Text :",value='', key="FrenshText")
