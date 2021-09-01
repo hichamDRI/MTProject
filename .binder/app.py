@@ -4,8 +4,8 @@ import streamlit as st
     
 @st.cache(allow_output_mutation=True, suppress_st_warning=True)
 def download_model(model_name):
-    model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
-    tokenizer = AutoTokenizer.from_pretrained(model_name,use_fast=False)
+    model = AutoModelForSeq2SeqLM.from_pretrained(PATH, local_files_only=True)
+    tokenizer = AutoTokenizer.from_pretrained(PATH, local_files_only=True)
     return model, tokenizer
 
 
