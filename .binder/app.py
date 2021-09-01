@@ -4,8 +4,13 @@ import streamlit as st
     
 @st.cache(allow_output_mutation=True, suppress_st_warning=True)
 def download_model(model_name):
-    model = AutoModelForSeq2SeqLM.from_pretrained(PATH, local_files_only=True)
-    tokenizer = AutoTokenizer.from_pretrained(PATH, local_files_only=True)
+    if model_name=="Helsinki-NLP/opus-mt-fr-ar":
+        model = AutoModelForSeq2SeqLM.from_pretrained('\srv\opus-mt-fr-ar\', local_files_only=True)
+        tokenizer = AutoTokenizer.from_pretrained('\srv\opus-mt-fr-ar\', local_files_only=True)
+    else:
+        model = AutoModelForSeq2SeqLM.from_pretrained('\srv\opus-mt-ar-fr\, local_files_only=True)
+        tokenizer = AutoTokenizer.from_pretrained('\srv\opus-mt-ar-fr\, local_files_only=True)
+    
     return model, tokenizer
 
 
