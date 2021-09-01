@@ -43,4 +43,11 @@ if st.button('Translate', key="ArabicBtn"):
         out=tokenizer_ar_fr.decode(outputs[0])
         st.text_area('Translation Result :', str(out).strip('<pad>'), key="FrenshResult")
 else: pass
+
+option = st.selectbox(
+     'Choose your option of translation',
+     ('Frensh To Arabic', 'Arabic To Frensh'))
+
+st.write('You selected:', option)
+
 st.markdown("<h3 style='text-align: center; color: green;'>Created By: CHATER hicham & ABOURACHID Tarik</h3>", unsafe_allow_html=True)
