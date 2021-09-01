@@ -21,7 +21,7 @@ st.title('Choose your translation option :')
 option = st.selectbox('',('From Frensh To Arabic', 'From Arabic To Frensh'))
 
 
-text = st.text_area("Enter Text :", max_chars=None, key="FrenshText")
+text = st.text_area("Enter Text :",value='', key="FrenshText")
 if option=='From Frensh To Arabic':
     if st.button('Translate', key="FrenshBtn"):
         if text == '':
