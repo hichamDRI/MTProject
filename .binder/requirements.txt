@@ -1,5 +1,5 @@
 streamlit==0.52.2
-jupyter-server-proxy==1.10.1
+jupyter-server-proxy==3.1.0
 nbserverproxy==0.8.8
 transformers==4.9.2
 torch==1.7.0
