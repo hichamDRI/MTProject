@@ -1,4 +1,4 @@
-from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
+from streamlit_call import *
 import streamlit as st
 
 st.markdown("<h1 style='text-align: center; color: red;'>Machine Translation using Transformers<br><br></h1>", unsafe_allow_html=True)
