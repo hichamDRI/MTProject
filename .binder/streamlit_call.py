@@ -1,4 +1,25 @@
 from subprocess import Popen
+from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
+import streamlit as st
+
+    
+@st.cache(allow_output_mutation=True, suppress_st_warning=True)
+def download_model(model_name):
+    model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
+    tokenizer = AutoTokenizer.from_pretrained(model_name,use_fast=False)
+    if model_name=="Helsinki-NLP/opus-mt-fr-ar":
+        tokenizer.save_pretrained('\srv\opus-mt-fr-ar\')
+        model.save_pretrained('\srv\opus-mt-fr-ar\')
+    else:
+        tokenizer.save_pretrained('\srv\opus-mt-ar-fr\')
+        model.save_pretrained('\srv\opus-mt-ar-fr\')
+    
+    return model, tokenizer
+
+model_name_fr_ar="Helsinki-NLP/opus-mt-fr-ar"
+model_fr_ar, tokenizer_fr_ar = download_model(model_name_fr_ar)
+model_name_ar_fr="Helsinki-NLP/opus-mt-ar-fr"
+model_ar_fr, tokenizer_ar_fr = download_model(model_name_ar_fr)
 
 def load_jupyter_server_extension(nbapp):
     """serve the streamlit app"""
